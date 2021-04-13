@@ -1,0 +1,108 @@
+<!doctype !html>
+
+<html>
+
+<head>
+  <title>Using Fission Drive to Serve Files</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <script defer src="main.js"></script>
+  <meta property="og:title" content="Using Fission Drive to Serve Files">
+  <meta property="og:site_name" content="Glass Bear">
+  <meta property="og:url" content="https://glass-bear.fission.app/">
+  <meta property="og:description" content="A demo site showing how to use Fission Drive to serve files">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="glass-bear.png">
+</head>
+
+<body>
+  <main>
+    <article>
+      <h1>Using Fission Drive to Serve Files</h1>
+    </article>
+
+    <article>
+      <p>
+        Fission Drive is the default app for managing files stored in WNFS. You can also use Fission Drive to serve
+        files to websites that only need to consume public files.
+      </p>
+      <p>
+        This demo app shows how to serve images using Fission Drive. See the
+        <a href="https://talk.fission.codes/t/using-fission-drive-to-serve-files/1817" target="_blank">
+          Using Fission Drive to Serve Files
+        </a>
+        forum post for more details on this technique.
+      </p>
+    </article>
+
+    <article>
+      <h3>One image</h3>
+      <p>
+        A single image retrieved from a public link like
+        <code>https://${username}.files.fission.name/p/${path_to_file}</code>.
+        For example, here is UCAN Sam retrieved from
+        <code>https://brian.files.fission.name/p/Art/UCAN Sam.png</code>.
+      </p>
+    </article>
+
+    <section>
+      <figure>
+        <img height="500" src="https://brian.files.fission.name/p/Art/UCAN Sam.png" />
+      </figure>
+    </section>
+
+    <article>
+      <h3>All images in a directory</h3>
+      <p>
+        We can also get a listing of images in a directory to display them all. IPFS gateways provide an endpoint that
+        returns a directory listing if we have the directory's content identifier (CID). On Fission, the endpoint is
+        <code>https://ipfs.runfission.com/api/v0/ls/${CID}</code>.
+      </p>
+      <p>
+        The CID for a directory can be copied from Fission Drive by right-clicking on the directory and selecting "Copy
+        CID".
+      </p>
+    </article>
+
+    <section>
+      <figure>
+        <img src="get-cid.png" />
+      </figure>
+    </section>
+
+    <article>
+      <p>If we fill in the CID and make a <code>GET</code> request to the endpoint, the IPFS gateway responds with a
+        directory listing. We can now make a public link for each file in the directory.
+      </p>
+    </article>
+
+    <section>
+      <img id="selectedImage" height="500" src="https://brian.files.fission.name/p/Art/UCAN Sam.png" />
+    </section>
+
+    <section id="imageOptions"></section>
+
+    <hr />
+    <article id="info">
+      <h2>More Info</h2>
+      <ul>
+        <li>Github Repo for this Demo:
+          <a href="https://github.com/fission-suite/drive-serving-files-example" target="_blank">
+            fission-suite/drive-serving-files-example
+          </a>
+        </li>
+        <li>Forum post:
+          <a href="https://talk.fission.codes/t/using-fission-drive-to-serve-files/1817" target="_blank">
+            Using Fission Drive to Serve Files
+          </a>
+        </li>
+        <li>Read the
+          <a href="https://guide.fission.codes/" target="_blank">Fission guide</a>
+          for more information about the Fission platform.
+        </li>
+      </ul>
+    </article>
+  </main>
+</body>
+
+</html>
