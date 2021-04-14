@@ -7,7 +7,7 @@ fetch('https://ipfs.runfission.com/api/v0/ls/bafybeifk5fpmho7azp4ed7gbooqrtnfnh5
     const files = directoryListing.Objects[0].Links.map(link => {
       return {
         name: link.Name,
-        link: `https://brian.files.fission.name/p/Art/${link.Name}`
+        link: `https://demouser.files.fission.name/p/Art/${link.Name}`
       }
     });
     files.forEach(file => {
