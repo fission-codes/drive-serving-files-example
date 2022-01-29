@@ -1,7 +1,7 @@
 const imageOptions = document.getElementById('imageOptions');
 const selectedImage = document.getElementById('selectedImage');
 
-fetch('https://ipfs.runfission.com/api/v0/ls/bafybeifk5fpmho7azp4ed7gbooqrtnfnh5flyvbkvwtbhwpbjizxykxd5y')
+fetch('https://ipfs.runfission.com/api/v0/ls/bafybeie4lf6iembrp7yzoodj5upvkmordirkxphwhnx4raf2zac6g7kore')
   .then(async response => {
     const directoryListing = await response.json();
     const files = directoryListing.Objects[0].Links.map(link => {
